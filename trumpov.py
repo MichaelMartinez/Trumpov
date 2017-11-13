@@ -1,4 +1,7 @@
+#!/home/mm/anaconda/envs/mlbook/bin/python
+
 import markovify
+import build_toc
 
 # Trump Corpus includes 25729 words.
 trump_text = 'trump_corpus.txt'
@@ -22,7 +25,8 @@ for chapters in range(12):
                                                                       tries=5000) + '\n\n' + text_model.make_sentence(
             tries=5000) + ' ' + text_model.make_sentence(tries=5000) + ' ' + text_model.make_sentence(
             tries=5000) + '\n' + text_model.make_sentence(tries=5000) + ' ' + text_model.make_sentence(
-            tries=5000) + ' ' + text_model.make_sentence(tries=5000) + '\n' + '>' + text_model.make_short_sentence(140, tries=5000) + '\n\n' + text_model.make_sentence(
+            tries=5000) + ' ' + text_model.make_sentence(tries=5000) + '\n' + '>' + text_model.make_short_sentence(140,
+                                                                                                                   tries=5000) + '\n\n' + text_model.make_sentence(
             tries=5000) + ' ' + text_model.make_sentence(tries=5000) + ' ' + text_model.make_sentence(
             tries=5000) + '\n\n')
 
@@ -42,3 +46,6 @@ def count_words(file):
 
 
 count_words(file)
+
+build_toc.process_file(file, "TOC.md")
+
