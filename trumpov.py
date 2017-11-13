@@ -14,9 +14,9 @@ text_model = markovify.Text(text, state_size=3)
 heidt = open('Hey_Everyone_Its_Donald_Trumpov.md', encoding='utf-8', mode='w')
 
 for chapters in range(12):
-    heidt.write('#' + text_model.make_short_sentence(80, tries=5000) + '\n')
+    heidt.write('#' + text_model.make_short_sentence(80, tries=5000) + '\n\n')
     for sections in range(20):
-        heidt.write('###' + text_model.make_short_sentence(140, tries=5000) + '\n' + text_model.make_sentence(
+        heidt.write('###' + text_model.make_short_sentence(140, tries=5000) + '\n\n' + text_model.make_sentence(
             tries=5000) + ' ' + text_model.make_sentence(tries=5000) + text_model.make_sentence(
             tries=5000) + '\n' + '>' + text_model.make_short_sentence(140,
                                                                       tries=5000) + '\n\n' + text_model.make_sentence(
@@ -24,7 +24,7 @@ for chapters in range(12):
             tries=5000) + '\n' + text_model.make_sentence(tries=5000) + ' ' + text_model.make_sentence(
             tries=5000) + ' ' + text_model.make_sentence(tries=5000) + '\n' + '>' + text_model.make_short_sentence(140, tries=5000) + '\n\n' + text_model.make_sentence(
             tries=5000) + ' ' + text_model.make_sentence(tries=5000) + ' ' + text_model.make_sentence(
-            tries=5000) + '\n')
+            tries=5000) + '\n\n')
 
 heidt.close()
 
